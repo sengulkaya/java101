@@ -11,24 +11,24 @@ public class Main {
 		
 		System.out.print("Your physics grade?");
 		physics = Integer.parseInt(kb.nextLine());
-		System.out.printf("Your physics grade: %d%n", math);
+		System.out.printf("Your physics grade: %d%n", physics);
 		
 		System.out.print("Your chem grade?");
 		chem = Integer.parseInt(kb.nextLine());
-		System.out.printf("Your chem grade: %d%n", math);
+		System.out.printf("Your chem grade: %d%n", chem);
 		
 		System.out.print("Your turkish grade?");
 		turkish = Integer.parseInt(kb.nextLine());
-		System.out.printf("Your turkish grade: %d%n", math);
+		System.out.printf("Your turkish grade: %d%n", turkish);
 		
 		System.out.print("Your history grade?");
 		history = Integer.parseInt(kb.nextLine());
-		System.out.printf("Your history grade: %d%n", math);
+		System.out.printf("Your history grade: %d%n", history);
 		
 		
 		System.out.print("Your music grade?");
 		music = Integer.parseInt(kb.nextLine());
-		System.out.printf("Your music grade: %d%n", math);
+		System.out.printf("Your music grade: %d%n", music);
 		
 		int total = math + physics + chem + turkish + history + music;
 		double average = total / (double)6;
