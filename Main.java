@@ -64,7 +64,6 @@ public class Main {
 		} else {
 			System.out.println("Tebrikler, sınıf geçtiniz.");
 		}
-		
 		System.out.printf("Ortalamanız : %.2f", average);
 	}
 
