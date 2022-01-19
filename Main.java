@@ -1,61 +1,72 @@
 /*
- * Java dilinde kullanıcıdan alınan n değerine göre aşağıdaki kurala uyan döngü kullanmadan bir "Recursive" metot yazın.
- * Kural : Girilen sayı 0 veya negatif olduğu yere kadar girilen sayıdan 5 rakamını çıkarın.
- * Her çıkarma işlemi sırasında ekrana son değeri yazdırın. Sayı negatif veya 0 olduktan sonra tekrar 5 ekleyin.
- * N Sayısı : 16
-Çıktısı : 16 11 6 1 -4 1 6 11 16 
- *   Yine her ekleme işleminde sayının son değerini ekrana yazdırın.
+Proje 1
+[22,27,16,2,18,6] -> Insertion Sort
+
+Yukarı verilen dizinin sort türüne göre aşamalarını yazınız.
+[22,27,16,2,18,6]->
+[16,22,27,2,18,6]->
+[2,16,22,27,18,6]->
+[2,16,18,22,27,6]->
+[2,6,16,18,22,27]
+Big-O gösterimini yazınız.
+O(n^2)
+Time Complexity:
+Average case: Aradığımız sayının ortada olması
+Worst case: Aradığımız sayının sonda olması
+Best case: Aradığımız sayının dizinin en başında olması.
+Dizi sıralandıktan sonra 18 sayısı hangi case kapsamına girer? Yazınız.
+Average case kapsamına girer.
+
+[7,3,5,8,2,9,4,15,6] dizisinin Insertion Sort'a göre ilk 4 adımını yazınız.
+1 - [7,3,5,8,2,9,4,15,6]->
+2 - [3,7,5,8,2,9,4,15,6]->
+3 - [3,5,7,8,2,9,4,15,6]->
+4 - [3,5,7,8,2,9,4,15,6]->
+5 - [2,3,5,7,8,9,4,15,6]->
+6 - [2,3,5,7,8,9,4,15,6]->
+7 - [2,3,4,5,7,8,9,15,6]->
+8 - [2,3,4,5,6,7,8,9,15]
 */
 
 package java101;
-import java.util.Scanner;
-import java.util.Random;
 
-public class Main {
+
+
+
+class InsertionSort {
+
 	public static void main(String[] args) {
-		Scanner kb = new Scanner(System.in);
-		
-        System.out.print("N Sayısı :");
-        int N = Integer.parseInt(kb.nextLine());
-        
-        System.out.println("Çıktısı : ");
-        int num =  N;
-        recursiveDeseneGöreMetotOluşturma(N, num);
-        
-        
+		// TODO Auto-generated method stub
+
+		int[] arr =  new int[] {7,3,5,8,2,9,4,15,6};
+
+
+		for (int i : arr)
+			System.out.printf("%d ", i);
+		System.out.println();
+
+		InsertionSort.sort(arr);
+
+
+		for (int i : arr)
+			System.out.printf("%d ", i);
+
+
 	}
-	static void recursiveDeseneGöreMetotOluşturma(int N, int num) 
-	{
-		if (N == num) {
-			recursiveDeseneGöreMetotOluşturmaSubtract(N, num);
+	public static void sort(int[] arr) {
+		for (int i = 1; i < arr.length; i++) {
+			int temp = 0;
+			for (int j = i; j > 0; j--) {
+				if (arr[j - 1] > arr[j]) {
+					temp = arr[j];
+					arr[j] = arr[j - 1];
+					arr[j - 1] = temp;
+				}
+			}
+
 		}
-		
+
+
 	}
-	static void recursiveDeseneGöreMetotOluşturmaSubtract(int N, int num) 
-	{
-		System.out.printf("%d ", num);
-		if (num > 0)
-			num -= 5;
-		else {
-			recursiveDeseneGöreMetotOluşturmaAdd(N, num);
-			return;
-		}
-		recursiveDeseneGöreMetotOluşturmaSubtract(N, num);
-		
-	}
-	static void recursiveDeseneGöreMetotOluşturmaAdd(int N, int num) 
-	{
-		if (num == N) {
-			System.out.printf("%d ", num);
-			return;
-		} else {
-			System.out.printf("%d ", num);
-			num += 5;
-			recursiveDeseneGöreMetotOluşturmaAdd(N, num);
-		}
-			
-			
-			
-		
-	} 
+
 }
