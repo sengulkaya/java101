@@ -6,6 +6,13 @@ public class App {
     public static void main(String[] args)
     {
         int[] arr = new int[] {16,21,11,8,12,22};
+        /*
+        {16,21,11}                       {8,12,22}
+        {16},{21, 11}                    {8}, {12, 22}
+             {21}, {11}                        {12}, {22}
+         {8, 11, 12, 16, 21, 22}
+
+         */
         arr = new MergeSort().sort(arr);
         for (int i : arr)
             System.out.printf("%d ", i);
